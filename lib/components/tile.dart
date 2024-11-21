@@ -38,13 +38,17 @@ class Tile extends StatelessWidget {
                 // First row with sender and date
                 Row(
                   children: [
-                    Text(
-                      '$title flutter.dev',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Expanded(
+                      child: Text(
+                        '$title flutter.dev',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    const Spacer(),
+                    const SizedBox(width: 8),
                     Text(
                       '21.11.2024',
                       style: TextStyle(
@@ -52,7 +56,7 @@ class Tile extends StatelessWidget {
                       ),
                     ),
                     const Icon(
-                      Icons.chevron_right,
+                      Icons.chevron_right_rounded,
                       color: Colors.grey,
                       size: 20,
                     ),
@@ -89,7 +93,7 @@ class Tile extends StatelessWidget {
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: 16),
               ],
             ),
           ),
