@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/components/tile.dart';
+import 'package:neem/components/tile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

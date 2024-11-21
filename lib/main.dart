@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/home_page.dart';
+import 'package:neem/pages/home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Neem());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Neem extends StatelessWidget {
+  const Neem({super.key});
 
   // This widget is the root of your application.
   @override
