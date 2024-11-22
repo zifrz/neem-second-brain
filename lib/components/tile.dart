@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:neem/models/artifact.dart';
 
 class Tile extends StatelessWidget {
-  final String title;
-  final String summary;
-  final String subtitle;
+  final Artifact artifact;
 
-  const Tile({
+  Tile({
     super.key,
-    required this.title,
-    required this.summary,
-    required this.subtitle,
+    required this.artifact,
   });
+
+  late String title = artifact.title;
+  late String summary = artifact.excerpt ?? "";
+  late String subtitle = artifact.siteName ?? "";
+  late DateTime createdAt = artifact.createdAt;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,7 @@ class Tile extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            '$title flutter.dev',
+                            title,
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
@@ -52,7 +54,7 @@ class Tile extends StatelessWidget {
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          '21.11.2024',
+                          '${createdAt.day}.${createdAt.month}.${createdAt.year}',
                           style: TextStyle(
                             color: Colors.grey[600],
                           ),
