@@ -7,10 +7,13 @@ class HomePage extends StatelessWidget {
 
   List<Artifact> artifacts = [
     Artifact(
-      title: "title",
-      siteName: "siteName",
+      title:
+          "Lorem ipsum odor amet, consectetuer adipiscing elit. Arcu neque volutpat, purus tempor dictum quisque lacinia aptent. Consectetur mus ante pulvinar volutpat nostra. Scelerisque curae lobortis duis senectus consectetur. ",
+      siteName:
+          "Lorem ipsum odor amet, consectetuer adipiscing elit. Arcu neque volutpat, purus tempor dictum quisque lacinia aptent. Consectetur mus ante pulvinar volutpat nostra. Scelerisque curae lobortis duis senectus consectetur. ",
       url: "url",
-      excerpt: "asdasd",
+      excerpt:
+          "Lorem ipsum odor amet, consectetuer adipiscing elit. Arcu neque volutpat, purus tempor dictum quisque lacinia aptent. Consectetur mus ante pulvinar volutpat nostra. Scelerisque curae lobortis duis senectus consectetur. ",
     )
   ];
 
