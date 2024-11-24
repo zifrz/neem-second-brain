@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:neem/models/artifact.dart';
@@ -20,12 +21,13 @@ class _TileState extends State<Tile> {
   late String subtitle = widget.artifact.siteName ?? "";
   late bool isRead = widget.artifact.isRead;
   late DateTime createdAt = widget.artifact.createdAt;
+  late bool isStarred = widget.artifact.isStarred;
 
   @override
   Widget build(BuildContext context) {
     const padding = EdgeInsets.all(8.0);
     const spacer = SizedBox(width: 8);
-    const smallSpacer = SizedBox(height: 4);
+    const smallSpacer = SizedBox(height: 2);
 
     return Column(
       children: [
@@ -42,12 +44,22 @@ class _TileState extends State<Tile> {
                   topLeft: Radius.circular(8),
                   bottomLeft: Radius.circular(8),
                 ),
+                autoClose: true,
               )
             ],
           ),
           endActionPane: ActionPane(
             motion: const StretchMotion(),
             children: [
+              SlidableAction(
+                onPressed: (_) => setState(() => isStarred = !isStarred),
+                icon:
+                    isStarred ? CupertinoIcons.star : CupertinoIcons.star_fill,
+                label: isStarred ? "Unstar" : "Star",
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.orange,
+                autoClose: true,
+              ),
               SlidableAction(
                 onPressed: (_) {},
                 icon: Icons.delete,
@@ -57,6 +69,7 @@ class _TileState extends State<Tile> {
                   topRight: Radius.circular(8),
                   bottomRight: Radius.circular(8),
                 ),
+                autoClose: true,
               )
             ],
           ),
@@ -65,14 +78,16 @@ class _TileState extends State<Tile> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  margin: const EdgeInsets.only(top: 5),
-                  width: 10,
-                  height: 10,
-                  decoration: const BoxDecoration(
-                    color: Colors.blue,
-                    shape: BoxShape.circle,
-                  ),
+                Opacity(
+                  opacity: (isRead) ? 0 : 1,
+                  child: Container(
+                      margin: const EdgeInsets.only(top: 5),
+                      width: 10,
+                      height: 10,
+                      decoration: const BoxDecoration(
+                        color: Colors.blue,
+                        shape: BoxShape.circle,
+                      )),
                 ),
                 const SizedBox(width: 10),
                 Expanded(
