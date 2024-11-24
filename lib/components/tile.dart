@@ -84,8 +84,8 @@ class _TileState extends State<Tile> {
                           Expanded(
                             child: Text(
                               title,
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 16),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
