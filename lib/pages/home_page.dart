@@ -3,22 +3,22 @@ import 'package:neem/components/tile.dart';
 import 'package:neem/models/artifact.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
-
-  List<Artifact> artifacts = [
-    Artifact(
-      title:
-          "Lorem ipsum odor amet, consectetuer adipiscing elit. Arcu neque volutpat, purus tempor dictum quisque lacinia aptent. Consectetur mus ante pulvinar volutpat nostra. Scelerisque curae lobortis duis senectus consectetur. ",
-      siteName:
-          "Lorem ipsum odor amet, consectetuer adipiscing elit. Arcu neque volutpat, purus tempor dictum quisque lacinia aptent. Consectetur mus ante pulvinar volutpat nostra. Scelerisque curae lobortis duis senectus consectetur. ",
-      url: "url",
-      excerpt:
-          "Lorem ipsum odor amet, consectetuer adipiscing elit. Arcu neque volutpat, purus tempor dictum quisque lacinia aptent. Consectetur mus ante pulvinar volutpat nostra. Scelerisque curae lobortis duis senectus consectetur. ",
-    )
-  ];
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    List<Artifact> artifacts = [
+      Artifact(
+        title:
+            "Lorem ipsum odor amet, consectetuer adipiscing elit. Arcu neque volutpat, purus tempor dictum quisque lacinia aptent. Consectetur mus ante pulvinar volutpat nostra. Scelerisque curae lobortis duis senectus consectetur. ",
+        siteName:
+            "Lorem ipsum odor amet, consectetuer adipiscing elit. Arcu neque volutpat, purus tempor dictum quisque lacinia aptent. Consectetur mus ante pulvinar volutpat nostra. Scelerisque curae lobortis duis senectus consectetur. ",
+        url: "url",
+        excerpt:
+            "Lorem ipsum odor amet, consectetuer adipiscing elit. Arcu neque volutpat, purus tempor dictum quisque lacinia aptent. Consectetur mus ante pulvinar volutpat nostra. Scelerisque curae lobortis duis senectus consectetur. ",
+      )
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
