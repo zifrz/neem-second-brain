@@ -6,10 +6,7 @@ import 'package:neem/models/artifact.dart';
 class Tile extends StatefulWidget {
   final Artifact artifact;
 
-  const Tile({
-    super.key,
-    required this.artifact,
-  });
+  const Tile({super.key, required this.artifact});
 
   @override
   State<Tile> createState() => _TileState();
@@ -25,10 +22,6 @@ class _TileState extends State<Tile> {
 
   @override
   Widget build(BuildContext context) {
-    const padding = EdgeInsets.all(8.0);
-    const spacer = SizedBox(width: 8);
-    const smallSpacer = SizedBox(height: 2);
-
     return Column(
       children: [
         Slidable(
@@ -41,8 +34,8 @@ class _TileState extends State<Tile> {
                 label: isRead ? "Unread" : "Read",
                 backgroundColor: Colors.blue,
                 borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(8),
-                  bottomLeft: Radius.circular(8),
+                  topLeft: Radius.circular(4),
+                  bottomLeft: Radius.circular(4),
                 ),
                 autoClose: true,
               )
@@ -66,15 +59,15 @@ class _TileState extends State<Tile> {
                 label: "Delete",
                 backgroundColor: Colors.red,
                 borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(8),
-                  bottomRight: Radius.circular(8),
+                  topRight: Radius.circular(4),
+                  bottomRight: Radius.circular(4),
                 ),
                 autoClose: true,
               )
             ],
           ),
           child: Padding(
-            padding: padding,
+            padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -89,7 +82,7 @@ class _TileState extends State<Tile> {
                         shape: BoxShape.circle,
                       )),
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(width: 8),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -105,7 +98,7 @@ class _TileState extends State<Tile> {
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),
-                          spacer,
+                          const SizedBox(width: 8),
                           Text(
                             '${createdAt.day}.${createdAt.month}.${createdAt.year}',
                             style: TextStyle(color: Colors.grey[600]),
@@ -117,7 +110,7 @@ class _TileState extends State<Tile> {
                           ),
                         ],
                       ),
-                      smallSpacer,
+                      const SizedBox(height: 2),
                       Row(
                         children: [
                           Expanded(
@@ -127,28 +120,18 @@ class _TileState extends State<Tile> {
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),
-                          spacer,
-                          Icon(Icons.flag, color: Colors.grey[500]),
                         ],
                       ),
-                      smallSpacer,
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              summary,
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey[600],
-                              ),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          const SizedBox(width: 20),
-                        ],
+                      const SizedBox(height: 2),
+                      Text(
+                        summary,
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.grey[600],
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      smallSpacer,
                     ],
                   ),
                 ),
@@ -158,8 +141,8 @@ class _TileState extends State<Tile> {
         ),
         Divider(
           color: Colors.grey[300],
-          indent: 16,
-          endIndent: 16,
+          indent: 8,
+          endIndent: 8,
           thickness: 2,
         ),
       ],
