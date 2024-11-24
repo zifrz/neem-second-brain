@@ -67,7 +67,7 @@ class _TileState extends State<Tile> {
             ],
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -93,7 +93,9 @@ class _TileState extends State<Tile> {
                             child: Text(
                               title,
                               style: const TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 16),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -101,7 +103,10 @@ class _TileState extends State<Tile> {
                           const SizedBox(width: 8),
                           Text(
                             '${createdAt.day}.${createdAt.month}.${createdAt.year}',
-                            style: TextStyle(color: Colors.grey[600]),
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey[600],
+                            ),
                           ),
                           const Icon(
                             Icons.chevron_right_rounded,
@@ -116,7 +121,7 @@ class _TileState extends State<Tile> {
                           Expanded(
                             child: Text(
                               subtitle,
-                              style: const TextStyle(fontSize: 14),
+                              style: const TextStyle(fontSize: 16),
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),
@@ -126,7 +131,7 @@ class _TileState extends State<Tile> {
                       Text(
                         summary,
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 16,
                           color: Colors.grey[600],
                         ),
                         maxLines: 2,
@@ -143,7 +148,7 @@ class _TileState extends State<Tile> {
           color: Colors.grey[300],
           indent: 8,
           endIndent: 8,
-          thickness: 2,
+          thickness: 0.9,
         ),
       ],
     );
